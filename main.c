@@ -115,7 +115,7 @@ int main(void)
   //OTAA
 
 	//ATZ
-	LORA_ATZ_SET(3);	//Remise à zéro des paramètres
+	LORA_ATZ_SET(3);
 	MX_USART3_UART_Init();
 
 //	//AT+DC
@@ -128,18 +128,18 @@ int main(void)
 	LORA_AT_RX2DR_SET("3",2,4);
 
 	//AT+APPEUI
-	LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
+	LORA_AT_APPEUI_SET("xxxxxxxxxxxxxxxx",16,4);
 
 	//AT+AK
-	LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
+	LORA_AT_AK_SET("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",32,4);
 
 	//AT+JOIN
   	LORA_AT_JOIN_SET("1",2,4);
 
   	LORA_AT_JSTA_GET();
-//
-//	//AT+SEND
-//	LORA_AT_SEND_SET("1883,AAAA,0",11,16);
+
+	//AT+SEND
+	LORA_AT_SEND_SET("xxxx,xxxx,xxxx",xx,16);
 
 
   LORA_AT_APPEUI_GET(); //OK
