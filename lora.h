@@ -1,9 +1,4 @@
-/*
- * lora.h
- *
- *  Created on: 4 mars 2019
- *      Author: alexa
- */
+
 
 #ifndef LORA_H_
 #define LORA_H_
