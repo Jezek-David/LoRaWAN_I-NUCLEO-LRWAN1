@@ -1,9 +1,4 @@
-/*
- * lora.c
- *
- *  Created on: 4 mars 2019
- *      Author: alexa
- */
+
 
 #include "main.h"
 #include "lora.h"
@@ -175,8 +170,6 @@ void LORA_AT_SEND_SET(const char* DATA, uint8_t DATA_SIZE, uint8_t RX_BUFF_SIZE)
 
 void LORA_AT_APPEUI_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
 	uint8_t out[]={"AT+APPEUI\r\n"};
 	uint8_t RX_BUFF_SIZE=30;
 	//On ne compte pas les "\" dans la taille des messages
@@ -189,8 +182,6 @@ void LORA_AT_APPEUI_GET(void){
 
 void LORA_AT_BAND_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
 	uint8_t out[]={"AT+BAND\r\n"};
 	uint8_t RX_BUFF_SIZE=8;
 	uint8_t in_get_b[RX_BUFF_SIZE];
@@ -203,8 +194,7 @@ void LORA_AT_BAND_GET(void){
 
 void LORA_AT_VER_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
+
 	uint8_t out[]={"AT+VER\r\n"};
 	uint8_t RX_BUFF_SIZE=11;
 	uint8_t in_get_b[RX_BUFF_SIZE];
@@ -217,8 +207,7 @@ void LORA_AT_VER_GET(void){
 
 void LORA_AT_AK_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
+
 	uint8_t out[]={"AT+AK\r\n"};
 	uint8_t RX_BUFF_SIZE=53;
 	uint8_t in_get_b[RX_BUFF_SIZE];
@@ -230,8 +219,6 @@ void LORA_AT_AK_GET(void){
 
 void LORA_AT_EUI_GET(void){ //e2,4f,43,ff,fe,44,c3,05
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
 	uint8_t out[]={"AT+EUI\r\n"};
 	uint8_t RX_BUFF_SIZE=32;
 	uint8_t in_get_b[RX_BUFF_SIZE];
@@ -244,8 +231,6 @@ void LORA_AT_EUI_GET(void){ //e2,4f,43,ff,fe,44,c3,05
 
 void LORA_AT_ADDR_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
 	uint8_t out[]={"AT+ADDR\r\n"};
 	uint8_t RX_BUFF_SIZE=10;
 	uint8_t in_get_b[RX_BUFF_SIZE];
@@ -259,8 +244,7 @@ void LORA_AT_ADDR_GET(void){
 
 void LORA_AT_JSTA_GET(void){
 
-	//Obligé de mettre la taille de retour attendue pour la commande
-	//On entre directement ici la commande et initialise le tableau de retour
+
 	uint8_t out[]={"AT+JSTA\r\n"};
 	uint8_t RX_BUFF_SIZE=6;
 	uint8_t in_get_b[RX_BUFF_SIZE];
