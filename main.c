@@ -55,7 +55,7 @@ int main(void)
   MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 
-  printf("Debut Code\r\n");
+  printf("Beginning code\r\n");
 
 
   /* Infinite loop */
@@ -249,8 +249,8 @@ static void MX_GPIO_Init(void)
 
 
 
-int _write(int file, char*ptr, int len)
-{
+int _write(int file, char*ptr, int len)			//this fucntion is not useful for the LoRa, it's just for write in the 							
+{							//USART2 Channel -> exemple: printf("Beginning LoRa)
 	HAL_UART_Transmit(&huart2,(uint8_t *)ptr,len,10);
 	return len;
 }
