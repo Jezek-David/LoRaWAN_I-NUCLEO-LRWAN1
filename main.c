@@ -289,13 +289,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		LORA_AT_RX2DR_SET("3",2,4);
 		printf("RX2DR-> OK\r\n");
 
-		LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
+		LORA_AT_APPEUI_SET("your_appeui",16,4);
 		printf("APPEUI-> OK\r\n");
 
-		LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
+		LORA_AT_AK_SET("your_ak",32,4);
 		printf("AK-> OK\r\n");
 
-		LORA_AT_JOIN_SET(1);
+		LORA_AT_JOIN_SET(1); //SEND BY OTAA
 		printf("JOIN-> OK\r\n");
 
 		LORA_AT_SEND_SET_A(value_h);
