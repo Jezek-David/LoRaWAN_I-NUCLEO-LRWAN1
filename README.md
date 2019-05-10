@@ -12,3 +12,4 @@ You need to set the AK key and the APPEUI key (you already have the EUI key), th
 For the JOIN request you need to give time to receive the confirmation message, I put 15s to receive this confirmation in my code.
 
 
+In this example I send message every 1000 seconds.
