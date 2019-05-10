@@ -223,7 +223,7 @@ void LORA_AT_AK_GET(void){
 }
 
 
-void LORA_AT_EUI_GET(void){ //e2,4f,43,ff,fe,44,c3,05
+void LORA_AT_EUI_GET(void){
 
 	uint8_t out[]={"AT+EUI\r\n"};
 	uint8_t RX_BUFF_SIZE=32;
