@@ -1,43 +1,3 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  ** This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
-  *
-  * COPYRIGHT(c) 2019 STMicroelectronics
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
@@ -47,21 +7,6 @@
 #include "stdio.h"
 #include "string.h"
 /* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
@@ -78,7 +23,7 @@ char* message;
 int buff_len;
 int my_value;
 
-/* USER CODE END PV */
+
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -87,40 +32,20 @@ static void MX_USART3_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_ADC_Init(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
@@ -132,23 +57,16 @@ int main(void)
 
   printf("Debut Code\r\n");
 
-  /* USER CODE END 2 */
 
   /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+  
 	while (1)
-		{
-    /* USER CODE END WHILE */
+	{
 
-    /* USER CODE BEGIN 3 */
-		}
-  /* USER CODE END 3 */
+	}
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -186,25 +104,12 @@ void SystemClock_Config(void)
   }
 }
 
-/**
-  * @brief ADC Initialization Function
-  * @param None
-  * @retval None
-  */
+
 static void MX_ADC_Init(void)
 {
 
-  /* USER CODE BEGIN ADC_Init 0 */
-
-  /* USER CODE END ADC_Init 0 */
-
   ADC_ChannelConfTypeDef sConfig = {0};
-
-  /* USER CODE BEGIN ADC_Init 1 */
-
-  /* USER CODE END ADC_Init 1 */
-  /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
-  */
+ 
   hadc.Instance = ADC1;
   hadc.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
   hadc.Init.Resolution = ADC_RESOLUTION_12B;
@@ -224,8 +129,7 @@ static void MX_ADC_Init(void)
   {
     Error_Handler();
   }
-  /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
-  */
+  
   sConfig.Channel = ADC_CHANNEL_13;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_4CYCLES;
@@ -233,31 +137,16 @@ static void MX_ADC_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN ADC_Init 2 */
-
-  /* USER CODE END ADC_Init 2 */
 
 }
 
 
-/**
-  * @brief TIM3 Initialization Function
-  * @param None
-  * @retval None
-  */
 static void MX_TIM3_Init(void)
 {
-
-  /* USER CODE BEGIN TIM3_Init 0 */
-
-  /* USER CODE END TIM3_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
-  /* USER CODE BEGIN TIM3_Init 1 */
-
-  /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 639;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -278,27 +167,15 @@ static void MX_TIM3_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN TIM3_Init 2 */
+  
   HAL_TIM_Base_Start_IT(&htim3);
-  /* USER CODE END TIM3_Init 2 */
+  
 
 }
 
-/**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
+
 static void MX_USART2_UART_Init(void)
 {
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -311,27 +188,12 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
 }
 
-/**
-  * @brief USART3 Initialization Function
-  * @param None
-  * @retval None
-  */
+
 static void MX_USART3_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART3_Init 0 */
-
-  /* USER CODE END USART3_Init 0 */
-
-  /* USER CODE BEGIN USART3_Init 1 */
-
-  /* USER CODE END USART3_Init 1 */
   huart3.Instance = USART3;
   huart3.Init.BaudRate = 115200;
   huart3.Init.WordLength = UART_WORDLENGTH_8B;
@@ -344,17 +206,9 @@ static void MX_USART3_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART3_Init 2 */
-
-  /* USER CODE END USART3_Init 2 */
-
 }
 
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
+
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -393,9 +247,6 @@ static void MX_GPIO_Init(void)
 
 }
 
-/* USER CODE BEGIN 4 */
-
-
 
 
 int _write(int file, char*ptr, int len)
@@ -406,57 +257,56 @@ int _write(int file, char*ptr, int len)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    	counter++;
+	counter++;
 
 	if(counter == 1000)
 	{
-          printf("Beginning Lora\r\n");
+		
+		printf("Beginning Lora\r\n");
+		sprintf(value_h,"%x",my_value);
 
-          printf("my_value %s\r\n",value_h);
-          sprintf(value_h,"%x",nb_turn/5);
+		buff_len =  strlen(value_h);
+		char buff_zero[12] = "";
 
-          buff_len =  strlen(value_h);
-          char buff_zero[12] = "";
+		for(int i = 0; i < 12 - buff_len; i++)
+		{
+			strcat(buff_zero,"0");
+		}
+			
+		strcat(buff_zero,value_h);
+		strcpy(value_h, buff_zero);
 
-          for(int i = 0; i < 12 - buff_len; i++){
 
-          strcat(buff_zero,"0");
+		LORA_ATZ_SET(3);
+		printf("RAZ-> OK\r\n");
+
+		LORA_AT_DC_SET("0",2,4);
+		printf("DC-> OK\r\n");
+
+		LORA_AT_DR_SET("3",2,4);
+		printf("DR-> OK\r\n");
+
+		LORA_AT_RX2DR_SET("3",2,4);
+		printf("RX2DR-> OK\r\n");
+
+		LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
+		printf("APPEUI-> OK\r\n");
+
+		LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
+		printf("AK-> OK\r\n");
+
+		LORA_AT_JOIN_SET(1);
+		printf("JOIN-> OK\r\n");
+
+		LORA_AT_SEND_SET_A(value_h);
+
+		printf("SEND-> OK\r\n");
+		printf("End requests SEND\r\n");
+
+		counter = 0;
+
+		printf("End Lora\r\n");
 	}
-
-	strcat(buff_zero,value_h);
-
-	strcpy(value_h, buff_zero);
-
-
-	LORA_ATZ_SET(3);
-	printf("RAZ-> OK\r\n");
-
-	LORA_AT_DC_SET("0",2,4);
-	printf("DC-> OK\r\n");
-
-	LORA_AT_DR_SET("3",2,4);
-	printf("DR-> OK\r\n");
-
-	LORA_AT_RX2DR_SET("3",2,4);
-	printf("RX2DR-> OK\r\n");
-
-	LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
-	printf("APPEUI-> OK\r\n");
-
-	LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
-	printf("AK-> OK\r\n");
-
-	LORA_AT_JOIN_SET(1);
-	printf("JOIN-> OK\r\n");
-
-	LORA_AT_SEND_SET_A(value_h);
-
-	printf("SEND-> OK\r\n");
-	printf("End requests SEND\r\n");
-
-	counter = 0;
-
-	printf("End Lora\r\n");
 }
 
 
