@@ -13,4 +13,4 @@ For the JOIN request you need to give time to receive the confirmation message, 
 
 
 In this example I send message every 1000 seconds.
-You can send an hexadecimal message but it's maximal length is 12.
+You can only send an hexadecimal message but it's maximal length is 12.
