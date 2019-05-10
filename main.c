@@ -73,7 +73,6 @@ UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 int counter;
-int value_i;
 char value_h[12];
 char* message;
 int buff_len;
