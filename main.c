@@ -66,7 +66,6 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
 
-TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart2;
@@ -89,7 +88,6 @@ static void MX_USART3_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_ADC_Init(void);
-static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -131,7 +129,6 @@ int main(void)
   MX_TIM3_Init();
   MX_USART2_UART_Init();
   MX_ADC_Init();
-  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   printf("Debut Code\r\n");
@@ -411,10 +408,9 @@ int _write(int file, char*ptr, int len)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     	counter++;
-			//printf("%d\r\n",counter);
 
-			  if(counter == 1000)
-			  {
+	if(counter == 1000)
+	{
           printf("Beginning Lora\r\n");
 
           printf("my_value %s\r\n",value_h);
@@ -426,42 +422,42 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
           for(int i = 0; i < 12 - buff_len; i++){
 
           strcat(buff_zero,"0");
-			  }
+	}
 
-			  strcat(buff_zero,value_h);
+	strcat(buff_zero,value_h);
 
-			  strcpy(value_h, buff_zero);
+	strcpy(value_h, buff_zero);
 
 
-				LORA_ATZ_SET(3);
-				printf("RAZ-> OK\r\n");
+	LORA_ATZ_SET(3);
+	printf("RAZ-> OK\r\n");
 
-				LORA_AT_DC_SET("0",2,4);
-				printf("DC-> OK\r\n");
+	LORA_AT_DC_SET("0",2,4);
+	printf("DC-> OK\r\n");
 
-				LORA_AT_DR_SET("3",2,4);
-				printf("DR-> OK\r\n");
+	LORA_AT_DR_SET("3",2,4);
+	printf("DR-> OK\r\n");
 
-				LORA_AT_RX2DR_SET("3",2,4);
-				printf("RX2DR-> OK\r\n");
+	LORA_AT_RX2DR_SET("3",2,4);
+	printf("RX2DR-> OK\r\n");
 
-				LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
-				printf("APPEUI-> OK\r\n");
+	LORA_AT_APPEUI_SET("7702e68d68e3bd17",16,4);
+	printf("APPEUI-> OK\r\n");
 
-				LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
-				printf("AK-> OK\r\n");
+	LORA_AT_AK_SET("ee73e26e3d9b1cd62eba000d5b90abd9",32,4);
+	printf("AK-> OK\r\n");
 
-				LORA_AT_JOIN_SET(1);
-				printf("JOIN-> OK\r\n");
+	LORA_AT_JOIN_SET(1);
+	printf("JOIN-> OK\r\n");
 
-				LORA_AT_SEND_SET_A(value_h);
+	LORA_AT_SEND_SET_A(value_h);
 
-				printf("SEND-> OK\r\n");
-				printf("End requests SEND\r\n");
+	printf("SEND-> OK\r\n");
+	printf("End requests SEND\r\n");
 
-				counter = 0;
+	counter = 0;
 
-				printf("End Lora\r\n");
+	printf("End Lora\r\n");
 }
 
 
