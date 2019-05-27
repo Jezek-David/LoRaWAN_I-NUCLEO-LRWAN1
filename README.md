@@ -70,3 +70,15 @@ See pinout_view.PNG (the 2 others pin I use in this pic are for my sensor)
 ## Code
 
 Now you can use the code in main.c and lora.c
+
+## How receive data that I send ?
+
+### MQTT.fx
+
+You can use a software: MQTT.fx, you just need to know your boker address and the boker port.
+
+Go to Edit Connection Profiles, near the connect button, choose your profile types, put your broker address and the boker port.
+Next connect using your profile. Go to suscribe and scan to see if there is your message.
+
+
+
