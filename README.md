@@ -13,4 +13,4 @@ For the JOIN request you need to give time to receive the confirmation message, 
 
 
 In this example I a send message every 1000 seconds. I have a interrupt on TIM3 each second and when my counter = 1000, I send a message.
-You can only send an hexadecimal message but it's maximal length is 12.
+You can only send an hexadecimal message but it's maximal length is 64 bit.
