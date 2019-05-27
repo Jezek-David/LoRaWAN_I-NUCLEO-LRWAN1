@@ -83,5 +83,5 @@ Next connect using your profile. Go to suscribe and scan to see if there is your
 ### How can I display my data in a website ?
 
 You can do it using a little python script.
-This script will suscribe to the broker and put the data that he will rececive.
+This script will suscribe to the broker (https://pypi.org/project/paho-mqtt/) and put the data that he will rececive using the  mysql.connector library.
 
