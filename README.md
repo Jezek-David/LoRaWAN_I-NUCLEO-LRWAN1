@@ -38,7 +38,7 @@ Step 2:
 
 Step 4 :
         You can now use printf
-        -> printf("test\r\n);
+        -> printf("test\r\n");
         
 Don't forget to configure Putty on your PC (serial connection)
 
