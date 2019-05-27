@@ -59,4 +59,4 @@ For the LoRa only, I use:
 
 And nothing else
 
-See pinout_view.PNG
+See pinout_view.PNG (the 2 others pin I use in this pic are for my sensor)
