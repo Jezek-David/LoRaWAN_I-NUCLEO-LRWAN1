@@ -10,9 +10,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
-
 TIM_HandleTypeDef htim3;
-
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
@@ -24,14 +22,12 @@ int buff_len;
 int my_value;
 
 
-
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_ADC_Init(void);
 
 int main(void)
 {
@@ -41,28 +37,24 @@ int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-
-
   /* Configure the system clock */
   SystemClock_Config();
-
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART3_UART_Init();
   MX_TIM3_Init();
   MX_USART2_UART_Init();
-  MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 
   printf("Beginning code\r\n");
 
-
+  /* USER CODE END 2 */	
+	
   /* Infinite loop */
   
 	while (1)
 	{
-
 	}
 }
 
@@ -105,42 +97,6 @@ void SystemClock_Config(void)
 }
 
 
-static void MX_ADC_Init(void)
-{
-
-  ADC_ChannelConfTypeDef sConfig = {0};
- 
-  hadc.Instance = ADC1;
-  hadc.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
-  hadc.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc.Init.EOCSelection = ADC_EOC_SEQ_CONV;
-  hadc.Init.LowPowerAutoWait = ADC_AUTOWAIT_DISABLE;
-  hadc.Init.LowPowerAutoPowerOff = ADC_AUTOPOWEROFF_DISABLE;
-  hadc.Init.ChannelsBank = ADC_CHANNELS_BANK_A;
-  hadc.Init.ContinuousConvMode = ENABLE;
-  hadc.Init.NbrOfConversion = 1;
-  hadc.Init.DiscontinuousConvMode = DISABLE;
-  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc.Init.DMAContinuousRequests = DISABLE;
-  if (HAL_ADC_Init(&hadc) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  
-  sConfig.Channel = ADC_CHANNEL_13;
-  sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_4CYCLES;
-  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-}
-
-
 static void MX_TIM3_Init(void)
 {
 
@@ -170,7 +126,6 @@ static void MX_TIM3_Init(void)
   
   HAL_TIM_Base_Start_IT(&htim3);
   
-
 }
 
 
@@ -231,26 +186,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : Alim_Sensor_Pin */
-  GPIO_InitStruct.Pin = Alim_Sensor_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(Alim_Sensor_GPIO_Port, &GPIO_InitStruct);
-
 }
 
+/* USER CODE BEGIN 4 */
 
-
-int _write(int file, char*ptr, int len)			//this fucntion is not useful for the LoRa, it's just for write in the 							
-{							//USART2 Channel -> exemple: printf("Beginning LoRa)
+int _write(int file, char*ptr, int len)	
+	
 	HAL_UART_Transmit(&huart2,(uint8_t *)ptr,len,10);
 	return len;
 }
@@ -309,6 +250,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 }
 
+/* USER CODE END 4 */
 
 void Error_Handler(void)
 {
