@@ -30,13 +30,13 @@ Step 2:
 Step 3: 
         Include stdio.h in main.c to activate printf
 
- USER CODE BEGIN 4 */
+ 
  int _write(intfile,char*ptr, intlen) 
  {     
         HAL_UART_Transmit(&huart2,(uint8_t *)ptr,len,10); 
         return len; 
  } 
- /* USER CODE END 4 */
+
 
 Step 4 :
         You can now use printf
