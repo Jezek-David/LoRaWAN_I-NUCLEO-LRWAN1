@@ -80,5 +80,8 @@ You can use a software: MQTT.fx, you just need to know your boker address and th
 Go to Edit Connection Profiles, near the connect button, choose your profile types, put your broker address and the boker port.
 Next connect using your profile. Go to suscribe and scan to see if there is your message.
 
+### How can I display my data in a website ?
 
+You can do it using a little python script.
+This script will suscribe to the broker and put the data that he will rececive.
 
