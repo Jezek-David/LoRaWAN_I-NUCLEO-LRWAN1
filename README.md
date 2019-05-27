@@ -15,12 +15,13 @@ In this example I a send message every 1000 seconds. I have a interrupt on TIM3 
 
 To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, you can open directly STM32CubeMx project in this software.
 
+## Configuration of MxProject
 
-## Clock Configuration : 
+### Clock Configuration : 
 
 See clock_configuration.PNG
 
-## PIN Configuration :
+### PIN Configuration :
 
 For the LoRa only, I use:
   - uart2 (for the debug between my STM32 and my PC via Putty)
