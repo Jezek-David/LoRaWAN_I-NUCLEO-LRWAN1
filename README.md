@@ -17,6 +17,10 @@ In this example I a send message every 1000 seconds. I have a interrupt on TIM3 
 
 To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, you can open directly STM32CubeMx project in this software.
 
+In lora.c I put all my fuctions which are necessary to configure our LoRa module to send a message (description of AT commands in WM-SG-SM-42 AT Command Reference Manual).
+
+In main.c I call this functions.
+
 ## Debug
 
 As I told you I use USART2 for debug so I rewrite the _write() function.
