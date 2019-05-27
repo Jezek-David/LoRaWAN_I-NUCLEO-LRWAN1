@@ -52,7 +52,7 @@ See clock_configuration.PNG
 ### PIN Configuration :
 
 For the LoRa only, I use:
-  - usart2 (for the debug between my STM32 and my PC via Putty)
-  - usart3 (for the communication between STM32 and LoRaWAN_I-NUCLEO-LRWAN1) PB10 & PB11 in my project
+  - USART2 (for the debug between my STM32 and my PC via Putty)
+  - USART3 (for the communication between STM32 and LoRaWAN_I-NUCLEO-LRWAN1) PB10 & PB11 in my project
   - TIM3 (for the interruption)
   - To supply my LoRa module I use the 3.3V output of the STM32
