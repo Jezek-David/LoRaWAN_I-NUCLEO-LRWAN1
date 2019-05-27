@@ -56,3 +56,7 @@ For the LoRa only, I use:
   - USART3 (for the communication between STM32 and LoRaWAN_I-NUCLEO-LRWAN1) PB10 & PB11 in my project
   - TIM3 (for the interruption)
   - To supply my LoRa module I use the 3.3V output/GND of the STM32
+
+And nothing else
+
+See pinout_view.PNG
