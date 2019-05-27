@@ -23,6 +23,8 @@ To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, yo
 
 See clock_configuration.PNG
 
+## PIN Configuration
+
 PIN Configuration : 
 
 For the LoRa only, I use:
