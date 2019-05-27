@@ -40,7 +40,7 @@ Step 4 :
         You can now use printf
         -> printf("test\r\n);
         
-Don't forget to configure Putty on your PC (serial connection
+Don't forget to configure Putty on your PC (serial connection)
 
 
 ## Configuration of MxProject
