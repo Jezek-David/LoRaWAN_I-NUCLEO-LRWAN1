@@ -19,7 +19,7 @@ You can only send an hexadecimal message but it's maximal length is 64 bit.
 To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, you can open directly STM32CubeMx project in this software.
 
 
-Clock Configuration : 
+## Clock Configuration : 
 
 See clock_configuration.PNG
 
