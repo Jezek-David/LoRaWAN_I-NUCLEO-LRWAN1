@@ -11,7 +11,7 @@ import mysql.connector as mysql
 
 ############ CODE MYSQL ############
 
-mydb = mysql.connect(host="localhost or other", user="your_username", passwd="your_psswd", database="your_namedatabase")
+mydb = mysql.connect(host="localhost or other address", user="your_username", passwd="your_psswd", database="your_namedatabase")
 mycursor = mydb.cursor()
 
 sql = "INSERT INTO donnees (data) VALUES (%s)"
