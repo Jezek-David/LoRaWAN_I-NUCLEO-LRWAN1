@@ -25,10 +25,24 @@ Step 1:
         Include stdio.h in main.c to activate printf
         
 Step 2: 
-        In main.c I redefine _write()_ to send message to usart
+        In main.c I redefine write() to send message to usart
 
 Step 3: 
         Include stdio.h in main.c to activate printf
+
+ USER CODE BEGIN 4 */
+ int _write(intfile,char*ptr, intlen) 
+ {     
+        HAL_UART_Transmit(&huart2,(uint8_t *)ptr,len,10); 
+        return len; 
+ } 
+ /* USER CODE END 4 */
+
+Step 4 :
+        You can now use printf
+        -> printf("test\r\n);
+        
+Don't forget to configure Putty on your PC (serial connection
 
 
 ## Configuration of MxProject
