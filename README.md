@@ -1,5 +1,7 @@
 # LoRaWAN_I-NUCLEO-LRWAN1
 
+## Some little things
+
 My project is just about to send data, not to receive, I use an NUCLEO L152RE and the I-NUCLEO LRWAN
 
 USART3 is used for the communication between ST and I-NUCLEO-LRWAN, I don't use USART2 because it's use for debug only (communication betwen NUCLEO and PC)
@@ -14,6 +16,7 @@ For the JOIN request you need to give time to receive the confirmation message, 
 In this example I a send message every 1000 seconds. I have a interrupt on TIM3 each second and when my counter = 1000, I send a message. You can only send an hexadecimal message but it's maximal length is 64 bit.
 
 To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, you can open directly STM32CubeMx project in this software.
+
 
 ## Configuration of MxProject
 
