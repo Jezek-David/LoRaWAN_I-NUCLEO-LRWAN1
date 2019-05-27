@@ -25,10 +25,7 @@ Step 1:
         Include stdio.h in main.c to activate printf
         
 Step 2: 
-        In main.c I redefine write() to send message to usart
-
-Step 3: 
-        Include stdio.h in main.c to activate printf
+        In main.c I redefine _write() to send message to usart
 
  
  int _write(intfile, char*ptr, intlen) 
