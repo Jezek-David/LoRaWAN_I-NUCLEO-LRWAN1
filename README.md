@@ -86,4 +86,4 @@ You can do it using a little python script.
 This script will suscribe to the broker (https://pypi.org/project/paho-mqtt/) and put the data that he will rececive using the  mysql.connector library.
 
 You need to install paho.mqtt.client and mysql.connector.
-For my database I use a WAMP server, my database is a MySQL database, I use phpmyadmin to administrate it. So to access to my database, my host is localhost
+For my database I use a WAMP server, my database is a MySQL database, I use phpmyadmin to administrate it. So to access to my database, my host is localhost, you need to put the the password and the username of phpmyadmin.
