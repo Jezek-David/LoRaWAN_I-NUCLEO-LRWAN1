@@ -66,3 +66,7 @@ And nothing else
 See pinout_view.PNG (the 2 others pin I use in this pic are for my sensor)
 
 # As you can see the two USART2 pin are configure on PA2 & PA3 BUT it's NOT possible to use them ! USART2 is only for debug using the USB connector between your STM32 and your PC
+
+## Code
+
+Now you can use the code in main.c and lora.c
