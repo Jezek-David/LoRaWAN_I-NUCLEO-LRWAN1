@@ -14,7 +14,7 @@ import mysql.connector as mysql
 mydb = mysql.connect(host="localhost or other address", user="your_username", passwd="your_psswd", database="your_namedatabase")
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO donnees (data) VALUES (%s)"
+sql = "INSERT INTO my_table (my_attribute) VALUES (%s)"
 
 ############ CODE MQTT PAHO ############
 
