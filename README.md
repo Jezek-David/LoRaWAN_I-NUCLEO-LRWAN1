@@ -17,6 +17,19 @@ In this example I a send message every 1000 seconds. I have a interrupt on TIM3 
 
 To configure my STM32 I use STM32CubeMx it's very useful. I also use Atollic, you can open directly STM32CubeMx project in this software.
 
+## Debug
+
+As I told you I use USART2 for debug so I rewrite the _write() function.
+
+Step 1: 
+        Include stdio.h in main.c to activate printf
+        
+Step 2: 
+        In main.c I redefine _write()_ to send message to usart
+
+Step 3: 
+        Include stdio.h in main.c to activate printf
+
 
 ## Configuration of MxProject
 
@@ -27,7 +40,7 @@ See clock_configuration.PNG
 ### PIN Configuration :
 
 For the LoRa only, I use:
-  - uart2 (for the debug between my STM32 and my PC via Putty)
-  - uart3 (for the communication between STM32 and LoRaWAN_I-NUCLEO-LRWAN1) PB10 & PB11 in my project
+  - usart2 (for the debug between my STM32 and my PC via Putty)
+  - usart3 (for the communication between STM32 and LoRaWAN_I-NUCLEO-LRWAN1) PB10 & PB11 in my project
   - TIM3 (for the interruption)
   - To supply my LoRa module I use the 3.3V output of the STM32
