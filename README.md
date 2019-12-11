@@ -65,7 +65,7 @@ And nothing else
 
 See pinout_view.PNG (the 2 others pin I use in this pic are for my sensor)
 
-# As you can see the two USART2 pin are configure on PA2 & PA3 BUT it's NOT possible to use them ! USART2 is only for debug using the USB connector between your STM32 and your PC
+# As you can see the two USART2 pins are configure on PA2 & PA3 BUT it's NOT possible to use them ! USART2 is only for debug using the USB connector between your STM32 and your PC
 
 ## Code
 
@@ -75,7 +75,7 @@ Now you can use the code in main.c and lora.c
 
 ### MQTT.fx
 
-You can use a software: MQTT.fx, you just need to know your boker address and the boker port.
+You can use a software: MQTT.fx, you just need to know your boker address and the broker port.
 
 Go to Edit Connection Profiles, near the connect button, choose your profile types, put your broker address and the boker port.
 Next connect using your profile. Go to suscribe and scan to see if there is your message.
