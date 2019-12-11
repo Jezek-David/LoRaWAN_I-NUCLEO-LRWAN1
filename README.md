@@ -75,9 +75,9 @@ Now you can use the code in main.c and lora.c
 
 ### MQTT.fx
 
-You can use a software: MQTT.fx, you just need to know your boker address and the broker port.
+You can use a software: MQTT.fx, you just need to know your broker address and the broker port.
 
-Go to Edit Connection Profiles, near the connect button, choose your profile types, put your broker address and the boker port.
+Go to Edit Connection Profiles, near the connect button, choose your profile types, put your broker address and the broker port.
 Next connect using your profile. Go to suscribe and scan to see if there is your message.
 
 ### How can I display my data in a website ?
