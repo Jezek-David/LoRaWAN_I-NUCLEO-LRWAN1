@@ -2,11 +2,11 @@
 
 ## Some little things
 
-My project is just about to send data, not to receive, I use a NUCLEO L152RE and the I-NUCLEO LRWAN
+My project is just about to send data, not to receive, I use a NUCLEO L152RE and the I-NUCLEO LRWAN.
 
-USART3 is used for communication between ST and I-NUCLEO-LRWAN, I don't use USART2 because it's used for debug only (communication between NUCLEO and PC)
+USART3 is used for communication between ST and I-NUCLEO-LRWAN, I don't use USART2 because it's used for debug only (communication between NUCLEO and PC).
 
-WM-SG-SM-42 AT Command Reference Manual is very important
+WM-SG-SM-42 AT Command Reference Manual is very important.
 
 The OTAA file gives instructions to connect and send data to a gateway, OTAA is the best way to connect to a LoRa gateway.
 You need to set the AK key and the APPEUI key (you already have the EUI key), they are given to you, it depends on the network you want to connect. 
@@ -44,7 +44,7 @@ Step 4 :
         You can now use printf
         -> printf("test\r\n");
         
-Don't forget to configure Putty on your PC (serial connection)
+Don't forget to configure Putty on your PC (serial connection).
 
 
 ## Configuration of MxProject
